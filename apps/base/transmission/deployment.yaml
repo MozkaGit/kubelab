@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: transmission
+  namespace: transmission
+  labels:
+    app: transmission
+spec:
+  selector:
+    matchLabels:
+      app: transmission
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: transmission
+    spec:
+      containers:
+        - name: transmission
+          image: lscr.io/linuxserver/transmission:4.0.6-r3-ls284
+          envFrom:
+            - configMapRef:
+                name: transmission
+          ports:
+            - containerPort: 9091
+              name: WebUI
+      #     volumeMounts:
+      #       - name: config
+      #         mountPath: /config
+      #       - name: downloads
+      #         mountPath: /downloads
+      #       - name: downloads2
+      #         mountPath: /downloads2
+      # volumes:
+      #   - name: config
+      #     persistentVolumeClaim:
+      #       claimName: transmission-config-pvc
+      #   - name: downloads
+      #     hostPath:
+      #       path: /mnt/plexdata/downloads
+      #   - name: downloads2
+      #     hostPath:
+      #       path: /mnt/plexdata2/downloads2
+      #
+
