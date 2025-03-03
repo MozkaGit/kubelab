@@ -24,17 +24,17 @@ spec:
           ports:
             - containerPort: 9091
               name: webui
-      #     volumeMounts:
-      #       - name: config
-      #         mountPath: /config
+      volumeMounts:
+        - name: config
+          mountPath: /config
       #       - name: downloads
       #         mountPath: /downloads
       #       - name: downloads2
       #         mountPath: /downloads2
-      # volumes:
-      #   - name: config
-      #     persistentVolumeClaim:
-      #       claimName: transmission-config-pvc
+      volumes:
+        - name: config
+          persistentVolumeClaim:
+            claimName: transmission-config-pvc
       #   - name: downloads
       #     hostPath:
       #       path: /mnt/plexdata/downloads
