@@ -24,13 +24,13 @@ spec:
           ports:
             - containerPort: 9091
               name: webui
-      volumeMounts:
-        - name: config
-          mountPath: /config
-      #       - name: downloads
-      #         mountPath: /downloads
-      #       - name: downloads2
-      #         mountPath: /downloads2
+          volumeMounts:
+            - name: config
+              mountPath: /config
+          #       - name: downloads
+          #         mountPath: /downloads
+          #       - name: downloads2
+          #         mountPath: /downloads2
       volumes:
         - name: config
           persistentVolumeClaim:
