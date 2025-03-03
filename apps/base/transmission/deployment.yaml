@@ -40,4 +40,4 @@ spec:
             path: /mnt/plexdata/downloads
         - name: downloads2
           hostPath:
-            path: /mnt/plexdata2/downloads2
+            path: /mnt/plexdata2/downloads
