@@ -4,5 +4,5 @@ namespace: transmission
 resources:
   - namespace.yaml
   # - storage.yaml
-  # - service.yaml
+  - service.yaml
   - deployment.yaml

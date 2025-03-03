@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: transmission
+  name: transmission-svc
+  namespace: transmission
+spec:
+  ports:
+    - port: 9091
+      protocol: TCP
+      targetPort: 9091
+  selector:
+    app: transmission
+  type: LoadBalancer
