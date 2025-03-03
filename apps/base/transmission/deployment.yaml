@@ -27,18 +27,17 @@ spec:
           volumeMounts:
             - name: config
               mountPath: /config
-          #       - name: downloads
-          #         mountPath: /downloads
-          #       - name: downloads2
-          #         mountPath: /downloads2
+            - name: downloads
+              mountPath: /downloads
+            - name: downloads2
+              mountPath: /downloads2
       volumes:
         - name: config
           persistentVolumeClaim:
             claimName: transmission-config-pvc
-      #   - name: downloads
-      #     hostPath:
-      #       path: /mnt/plexdata/downloads
-      #   - name: downloads2
-      #     hostPath:
-      #       path: /mnt/plexdata2/downloads2
-      #
+        - name: downloads
+          hostPath:
+            path: /mnt/plexdata/downloads
+        - name: downloads2
+          hostPath:
+            path: /mnt/plexdata2/downloads2
