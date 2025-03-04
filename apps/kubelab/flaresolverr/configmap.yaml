@@ -5,7 +5,7 @@ metadata:
   namespace: flaresolverr
 data:
   LOG_LEVEL: debug
-  LOG_HTML: false
+  LOG_HTML: "false"
   CAPTCHA_SOLVER: ${CAPTCHA_SOLVER:-none}
   LANG: en_US
   DRIVER: nodriver
