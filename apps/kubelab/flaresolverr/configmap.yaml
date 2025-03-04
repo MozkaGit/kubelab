@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: flaresolverr
+  namespace: flaresolverr
+data:
+  LOG_LEVEL: debug
+  LOG_HTML: false
+  CAPTCHA_SOLVER: ${CAPTCHA_SOLVER:-none}
+  LANG: en_US
+  DRIVER: nodriver

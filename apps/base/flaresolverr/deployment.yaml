@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flaresolverr
+  namespace: flaresolverr
+  labels:
+    app: flaresolverr
+spec:
+  selector:
+    matchLabels:
+      app: flaresolverr
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: flaresolverr
+    spec:
+      containers:
+        - name: flaresolverr
+          image: alexfozor/flaresolverr:pr-1300-experimental
+          envFrom:
+            - configMapRef:
+                name: flaresolverr
+          ports:
+            - containerPort: 8191

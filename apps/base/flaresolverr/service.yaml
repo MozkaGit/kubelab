@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: flaresolverr
+  name: flaresolverr-svc
+  namespace: flaresolverr
+spec:
+  ports:
+    - port: 8191
+      protocol: TCP
+      targetPort: 8191
+  selector:
+    app: flaresolverr
+  type: LoadBalancer
