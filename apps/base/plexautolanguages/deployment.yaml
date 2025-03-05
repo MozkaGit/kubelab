@@ -23,7 +23,7 @@ spec:
               value: Europe/Paris
           volumeMounts:
             - name: config
-              mountPath: /app/config
+              mountPath: /config
       volumes:
         - name: config
           configMap:
