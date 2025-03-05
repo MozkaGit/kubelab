@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: plexautolanguages
+  namespace: plexautolanguages
+data:
+  TZ: Europe/Paris
+  config.yaml: |
+    plexautolanguages:
+      update_level: "show"
+      update_strategy: "all"
+      trigger_on_play: true
+      trigger_on_scan: true
+      trigger_on_activity: true
+      refresh_library_on_scan: true
+
+      # Plex configuration
+      plex:
+        url: "http://192.168.0.27:32400"
+        token: ""
+
+      scheduler:
+        enable: true
+        schedule_time: "04:30"
+
+      notifications:
+        enable: false
+        apprise_configs: []
+
+      debug: false

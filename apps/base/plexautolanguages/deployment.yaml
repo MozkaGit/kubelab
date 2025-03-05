@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: plexautolanguages
+  namespace: plexautolanguages
+  labels:
+    app: plexautolanguages
+spec:
+  selector:
+    matchLabels:
+      app: plexautolanguages
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: plexautolanguages
+    spec:
+      containers:
+        - name: plexautolanguages
+          image: remirigal/plex-auto-languages
+          volumeMounts:
+            - name: config
+              mountPath: /config
+      volumes:
+        - name: config
+          configMap:
+            name: plexautolanguages
