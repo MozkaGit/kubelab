@@ -4,7 +4,7 @@ metadata:
   name: plexautolanguages
   namespace: plexautolanguages
 data:
-  config.yaml: |
+  default.yaml: |
     plexautolanguages:
       update_level: "show"
       update_strategy: "all"
