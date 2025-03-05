@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jackett
+  namespace: jackett
+  labels:
+    app: jackett
+spec:
+  selector:
+    matchLabels:
+      app: jackett
+  replicas: 0
+  template:
+    metadata:
+      labels:
+        app: jackett
+    spec:
+      containers:
+        - name: jackett
+          image: lscr.io/linuxserver/jackett:v0.22.1507-ls696
+          envFrom:
+            - configMapRef:
+                name: jackett
+          ports:
+            - containerPort: 9117
+          volumeMounts:
+            - name: config
+              mountPath: /config
+      volumes:
+        - name: config
+          persistentVolumeClaim:
+            claimName: jackett-pvc
