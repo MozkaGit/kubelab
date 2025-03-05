@@ -18,9 +18,12 @@ spec:
       containers:
         - name: plexautolanguages
           image: remirigal/plex-auto-languages
+          env:
+            - name: TZ
+              value: Europe/Paris
           volumeMounts:
             - name: config
-              mountPath: /config
+              mountPath: /app/config
       volumes:
         - name: config
           configMap:

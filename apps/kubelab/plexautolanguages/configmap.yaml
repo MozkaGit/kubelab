@@ -4,7 +4,6 @@ metadata:
   name: plexautolanguages
   namespace: plexautolanguages
 data:
-  TZ: Europe/Paris
   config.yaml: |
     plexautolanguages:
       update_level: "show"
