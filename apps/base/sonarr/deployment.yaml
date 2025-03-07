@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sonarr
+  namespace: sonarr
+  labels:
+    app: sonarr
+spec:
+  selector:
+    matchLabels:
+      app: sonarr
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: sonarr
+    spec:
+      containers:
+        - name: sonarr
+          image: linuxserver/sonarr:4.0.13.2932-ls272
+          envFrom:
+            - configMapRef:
+                name: sonarr
+          ports:
+            - containerPort: 8989
+          volumeMounts:
+            - name: config
+              mountPath: /app/config
+            - name: tv
+              mountPath: /tv
+            - name: animes
+              mountPath: /animes
+            - name: downloads
+              mountPath: /downloads
+            - name: tv2
+              mountPath: /tv2
+            - name: animes2
+              mountPath: /animes2
+      volumes:
+        - name: config
+          persistentVolumeClaim:
+            claimName: sonarr-pvc
+        - name: tv
+          hostPath:
+            path: /mnt/plexdata/medias/tv
+        - name: animes
+          hostPath:
+            path: /mnt/plexdata/medias/animes
+        - name: downloads
+          hostPath:
+            path: /mnt/plexdata/downloads
+        - name: tv2
+          hostPath:
+            path: /mnt/plexdata2/medias/tv
+        - name: animes2
+          hostPath:
+            path: /mnt/plexdata2/medias/animes
