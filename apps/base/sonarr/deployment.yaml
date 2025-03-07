@@ -39,7 +39,7 @@ spec:
       volumes:
         - name: config
           persistentVolumeClaim:
-            claimName: sonarr-pvc
+            claimName: sonarr-config-pvc
         - name: tv
           hostPath:
             path: /mnt/plexdata/medias/tv
