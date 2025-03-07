@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: radarr
+  namespace: radarr
+  labels:
+    app: radarr
+spec:
+  selector:
+    matchLabels:
+      app: radarr
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: radarr
+    spec:
+      containers:
+        - name: radarr
+          image: lscr.io/radarr:5.19.3.9730-ls261
+          envFrom:
+            - configMapRef:
+                name: radarr
+          ports:
+            - containerPort: 7878
+          volumeMounts:
+            - name: config
+              mountPath: /app/config
+            - name: movies
+              mountPath: /movies
+            - name: animation_movies
+              mountPath: /animation_movies
+            - name: downloads
+              mountPath: /downloads
+            - name: movies2
+              mountPath: /movies2
+            - name: animation_movies2
+              mountPath: /animation_movies2
+      volumes:
+        - name: config
+          persistenmoviesolumeClaim:
+            claimName: radarr-config-pvc
+        - name: movies
+          hostPath:
+            path: /mnt/plexdata/medias/movies
+        - name: animation_movies
+          hostPath:
+            path: /mnt/plexdata/medias/animation_movies
+        - name: downloads
+          hostPath:
+            path: /mnt/plexdata/downloads
+        - name: movies2
+          hostPath:
+            path: /mnt/plexdata2/medias/movies
+        - name: animation_movies2
+          hostPath:
+            path: /mnt/plexdata2/medias/animation_movies
