@@ -25,7 +25,7 @@ spec:
             - containerPort: 8989
           volumeMounts:
             - name: config
-              mountPath: /app/config
+              mountPath: /config
             - name: tv
               mountPath: /tv
             - name: animes

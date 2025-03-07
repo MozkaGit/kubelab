@@ -25,7 +25,7 @@ spec:
             - containerPort: 7878
           volumeMounts:
             - name: config
-              mountPath: /app/config
+              mountPath: /config
             - name: movies
               mountPath: /movies
             - name: animation-movies
@@ -38,7 +38,7 @@ spec:
               mountPath: /animation_movies2
       volumes:
         - name: config
-          persistenmoviesolumeClaim:
+          persistentVolumeClaim:
             claimName: radarr-config-pvc
         - name: movies
           hostPath:
