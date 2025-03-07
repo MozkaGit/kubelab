@@ -28,13 +28,13 @@ spec:
               mountPath: /app/config
             - name: movies
               mountPath: /movies
-            - name: animation_movies
+            - name: animation-movies
               mountPath: /animation_movies
             - name: downloads
               mountPath: /downloads
             - name: movies2
               mountPath: /movies2
-            - name: animation_movies2
+            - name: animation-movies2
               mountPath: /animation_movies2
       volumes:
         - name: config
@@ -43,7 +43,7 @@ spec:
         - name: movies
           hostPath:
             path: /mnt/plexdata/medias/movies
-        - name: animation_movies
+        - name: animation-movies
           hostPath:
             path: /mnt/plexdata/medias/animation_movies
         - name: downloads
@@ -52,6 +52,6 @@ spec:
         - name: movies2
           hostPath:
             path: /mnt/plexdata2/medias/movies
-        - name: animation_movies2
+        - name: animation-movies2
           hostPath:
             path: /mnt/plexdata2/medias/animation_movies
