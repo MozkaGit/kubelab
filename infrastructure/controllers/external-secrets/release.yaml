@@ -14,7 +14,7 @@ spec:
         name: external-secrets-operator
         namespace: secrets
       interval: 12h
-      upgrade:
-        crds: CreateReplace
-      driftDetection:
-        mode: enabled
+  upgrade:
+    crds: CreateReplace
+  driftDetection:
+    mode: enabled
