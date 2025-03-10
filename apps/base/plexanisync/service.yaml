@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: plexanisync
+  name: plexanisync-svc
+  namespace: plexanisync
+spec:
+  ports:
+    - port: 8181
+      protocol: TCP
+      targetPort: 8181
+  selector:
+    app: plexanisync
+  type: LoadBalancer

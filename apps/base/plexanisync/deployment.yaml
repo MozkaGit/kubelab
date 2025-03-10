@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: plexanisync
+  namespace: plexanisync
+  labels:
+    app: plexanisync
+spec:
+  selector:
+    matchLabels:
+      app: plexanisync
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: plexanisync
+    spec:
+      containers:
+        - name: tautulli-plexanisync
+          image: ghcr.io/rickdb/tautulli-plexanisync
+          env:
+            - name: PLEX_SECTION
+              value: animes
+            - name: PLEX_URL
+              value: plex-svc.plex.svc.cluster.local
+            - name: INTERVAL
+              value: 0
+            - name: TZ
+              value: Europe/Paris
+          envFrom:
+            - secretRef:
+                name: anilist-credentials
+            - secretRef:
+                name: plex-credentials
+          ports:
+            - containerPort: 8181
+          volumeMounts:
+            - name: config
+              mountPath: config
+            - name: mappings
+              mountPath: /plexanisync/custom_mappings.yaml
+      volumes:
+        - name: config
+          persistentVolumeClaim:
+            claimName: plexanisync-pvc
+        - name: mappings
+          configMap:
+            name: plexanisync
