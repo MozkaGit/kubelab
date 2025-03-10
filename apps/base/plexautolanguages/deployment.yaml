@@ -21,6 +21,13 @@ spec:
           env:
             - name: TZ
               value: Europe/Paris
+            - name: PLEX_URL
+              value: plex-svc.plex.svc.cluster.local
+            - name: PLEX_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: plex-credentials
+                  key: PLEX_TOKEN
           volumeMounts:
             - name: config
               mountPath: /config
