@@ -24,7 +24,7 @@ spec:
             - name: PLEX_URL
               value: plex-svc.plex.svc.cluster.local
             - name: INTERVAL
-              value: 0
+              value: "0"
             - name: TZ
               value: Europe/Paris
           envFrom:
