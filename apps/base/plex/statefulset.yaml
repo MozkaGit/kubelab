@@ -1,0 +1,80 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: plex
+  namespace: plex
+spec:
+  serviceName: plex
+  replicas: 1
+  selector:
+    matchLabels:
+      app: plex
+  template:
+    metadata:
+      labels:
+        app: plex
+    spec:
+      hostNetwork: true
+      containers:
+        - name: plex
+          image: lscr.io/linuxserver/plex
+          envFrom:
+            - configMapRef:
+                name: plex-config
+          volumeMounts:
+            - name: config
+              mountPath: /config
+            - name: transcode
+              mountPath: /transcode
+            - name: animes
+              mountPath: /animes
+            - name: animes2
+              mountPath: /animes2
+            - name: movies
+              mountPath: /movies
+            - name: movies2
+              mountPath: /movies2
+            - name: animation-movies
+              mountPath: /animation_movies
+            - name: animation-movies2
+              mountPath: /animation_movies2
+            - name: tv
+              mountPath: /tv
+            - name: tv2
+              mountPath: /tv2
+      volumes:
+        - name: transcode
+          emptyDir: {}
+        - name: animes
+          hostPath:
+            path: /mnt/plexdata/medias/animes
+        - name: animes2
+          hostPath:
+            path: /mnt/plexdata2/medias/animes
+        - name: movies
+          hostPath:
+            path: /mnt/plexdata/medias/movies
+        - name: movies2
+          hostPath:
+            path: /mnt/plexdata2/medias/movies
+        - name: animation-movies
+          hostPath:
+            path: /mnt/plexdata/medias/animation_movies
+        - name: animation-movies2
+          hostPath:
+            path: /mnt/plexdata2/medias/animation_movies
+        - name: tv
+          hostPath:
+            path: /mnt/plexdata/medias/tv
+        - name: tv2
+          hostPath:
+            path: /mnt/plexdata2/medias/tv
+  volumeClaimTemplates:
+    - metadata:
+        name: config
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 1Gi
