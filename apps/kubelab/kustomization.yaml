@@ -9,4 +9,4 @@ resources:
   - flaresolverr
   - jackett
   - plexautolanguages
-  - plexanisync
+  # - plexanisync
