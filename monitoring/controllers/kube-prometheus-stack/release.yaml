@@ -1,0 +1,50 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: kube-prometheus-stack
+  namespace: monitoring
+spec:
+  interval: 30m
+  chart:
+    spec:
+      chart: kube-prometheus-stack
+      version: "67.x"
+      sourceRef:
+        kind: HelmRepository
+        name: kube-prometheus-stack
+        namespace: monitoring
+      interval: 12h
+  install:
+    crds: Create
+  upgrade:
+    crds: CreateReplace
+  driftDetection:
+    mode: enabled
+    ignore:
+      - paths: ["/metadata/annotations/prometheus-operator-validated"]
+        target:
+          kind: PrometheusRule
+  values:
+    grafana:
+      adminPassword:
+        secretKeyRef:
+          name: grafana-secret
+          key: adminPassword
+      ingress:
+        enabled: true
+        ingressClassName: traefik
+        servicePort: 80
+        serviceName: kube-prometheus-stack-grafana
+        annotations:
+          external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
+          external-dns.alpha.kubernetes.io/hostname: grafana.mozka.app
+          external-dns.alpha.kubernetes.io/target: d8159c1f-555c-4b8a-b44b-db872b68f4d5.cfargotunnel.com
+        hosts:
+          - grafana.mozka.app
+        path: /
+        pathType: Prefix
+        # Disable TLS because it's handled by Cloudflare
+        # tls:
+        #   - secretName: grafana-tls-secret
+        #     hosts:
+        #       - grafana.mozka.app
