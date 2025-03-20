@@ -26,14 +26,9 @@ spec:
           kind: PrometheusRule
   values:
     grafana:
-      adminPassword:
-        secretKeyRef:
-          name: grafana-secret
-          key: adminPassword
       ingress:
         enabled: true
         ingressClassName: traefik
-        servicePort: 80
         serviceName: kube-prometheus-stack-grafana
         annotations:
           external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
@@ -43,6 +38,11 @@ spec:
           - grafana.mozka.app
         path: /
         pathType: Prefix
+  valuesFrom:
+    - kind: Secret
+      name: grafana-credentials
+      valuesKey: adminPassword
+      targetPath: grafana.adminPassword
         # Disable TLS because it's handled by Cloudflare
         # tls:
         #   - secretName: grafana-tls-secret
