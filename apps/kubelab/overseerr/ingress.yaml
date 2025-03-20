@@ -16,6 +16,6 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: overseerr
+                name: overseerr-svc
                 port:
                   number: 5055
