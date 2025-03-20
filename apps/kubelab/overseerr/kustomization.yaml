@@ -4,3 +4,4 @@ namespace: overseerr
 resources:
   - ../../base/overseerr
   - configmap.yaml
+  - ingress.yaml
