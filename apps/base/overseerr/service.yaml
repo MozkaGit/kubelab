@@ -7,9 +7,9 @@ metadata:
   namespace: overseerr
 spec:
   ports:
-    - port: 5055
+    - port: 80
       protocol: TCP
-      targetPort: 5055
+      targetPort: 80
   selector:
     app: overseerr
   type: LoadBalancer

@@ -18,4 +18,4 @@ spec:
               service:
                 name: overseerr-svc
                 port:
-                  number: 5055
+                  number: 80
