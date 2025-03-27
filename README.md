@@ -14,11 +14,32 @@ This project uses a GitOps approach to manage the infrastructure and application
 
 <table>
     <tr>
-Monitoring and observability tools</td>
+        <th>Dossier</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>apps</td>
+        <td>Contient toutes les applications déployées sur le cluster, organisées par environnement</td>
+    </tr>
+    <tr>
+        <td>clusters</td>
+        <td>Configuration spécifique à chaque cluster</td>
+    </tr>
+    <tr>
+        <td>docs</td>
+        <td>Documentation du projet</td>
+    </tr>
+    <tr>
+        <td>infrastructure</td>
+        <td>Composants d'infrastructure de base (contrôleurs, configs)</td>
+    </tr>
+    <tr>
+        <td>monitoring</td>
+        <td>Outils de surveillance et d'observabilité</td>
     </tr>
     <tr>
         <td>utils</td>
-        <td>Various scripts and utilities</td>
+        <td>Scripts et utilitaires divers</td>
     </tr>
 </table>
 
