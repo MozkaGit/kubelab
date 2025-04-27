@@ -173,17 +173,17 @@ My monitoring stack includes Prometheus for metrics collection and Grafana for v
 
 ## To Do
 
-- [ ] Migrate to shared storage with NAS and the iSCSI plugin
-- [ ] Implement an automated backup solution for persistent volumes
-- [ ] Explore options for high availability
-- [ ] Add custom Grafana dashboards for better visualization
-- [ ] Set up Authentik for authentication
-- [ ] Set up private runner with Action Runner Controller
-- [ ] Implement N8N for workflow automation
 - [ ] Migrate to Talos Linux
 - [ ] Implement Cilium as CNI
+- [ ] Migrate to shared storage with NAS and the iSCSI plugin
+- [ ] Implement an automated backup solution for persistent volumes
+- [ ] Set up Authentik for authentication
+- [ ] Add custom Grafana dashboards for better visualization
+- [ ] Set up private runner with Action Runner Controller
+- [ ] Implement N8N for workflow automation
 - [ ] Deploy KubeShark for network traffic analysis
 - [ ] Implement vCluster for multi-tenancy
+- [ ] Explore options for high availability
 
 ## Useful Resources
 
