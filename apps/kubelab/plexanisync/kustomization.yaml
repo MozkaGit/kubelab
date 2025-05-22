@@ -4,4 +4,4 @@ namespace: plexanisync
 resources:
   - ../../base/plexanisync
   - configmap.yaml
-  - ingress.yaml
+  # - ingress.yaml
