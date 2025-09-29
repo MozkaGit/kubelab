@@ -4,7 +4,6 @@ metadata:
   labels:
     app: sonarr
   name: sonarr-svc
-  namespace: sonarr
 spec:
   ports:
     - port: 8989
