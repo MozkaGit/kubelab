@@ -4,6 +4,6 @@ namespace: plex
 resources:
   # - namespace.yaml
   - service.yaml
-  - credentials.yaml
+  - anilist-credentials.yaml
   - deployment.yaml
   - storage.yaml
