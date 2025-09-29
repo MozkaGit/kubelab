@@ -4,7 +4,6 @@ metadata:
   labels:
     app: flaresolverr
   name: flaresolverr-svc
-  namespace: flaresolverr
 spec:
   ports:
     - port: 8191

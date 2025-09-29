@@ -4,7 +4,6 @@ metadata:
   labels:
     app: jackett
   name: jackett-svc
-  namespace: jackett
 spec:
   ports:
     - port: 9117

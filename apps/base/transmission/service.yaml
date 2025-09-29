@@ -4,7 +4,6 @@ metadata:
   labels:
     app: transmission
   name: transmission-svc
-  namespace: transmission
 spec:
   ports:
     - port: 9091
