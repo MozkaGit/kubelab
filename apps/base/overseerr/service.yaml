@@ -4,7 +4,6 @@ metadata:
   labels:
     app: overseerr
   name: overseerr-svc
-  namespace: overseerr
 spec:
   ports:
     - port: 80
@@ -13,4 +12,3 @@ spec:
   selector:
     app: overseerr
   type: ClusterIP
-
