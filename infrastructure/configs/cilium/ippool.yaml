@@ -1,0 +1,7 @@
+apiVersion: "cilium.io/v2"
+kind: CiliumLoadBalancerIPPool
+metadata:
+  name: kubelab-pool
+spec:
+  blocks:
+    - cidr: "192.168.0.60/27"

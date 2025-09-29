@@ -1,0 +1,8 @@
+apiVersion: "cilium.io/v2alpha1"
+kind: CiliumL2AnnouncementPolicy
+metadata:
+  name: kubelab-policy
+spec:
+  # IMPORTANT: if externalIPss is desired, externalIPs.enabled=true must be set in values.yaml
+  # externalIPs: true
+  loadBalancerIPs: true
