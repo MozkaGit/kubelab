@@ -4,7 +4,6 @@ metadata:
   labels:
     app: radarr
   name: radarr-svc
-  namespace: servarr
 spec:
   ports:
     - port: 7878
