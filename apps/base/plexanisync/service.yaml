@@ -4,7 +4,6 @@ metadata:
   labels:
     app: plexanisync
   name: plexanisync-svc
-  namespace: plexanisync
 spec:
   ports:
     - port: 8181
