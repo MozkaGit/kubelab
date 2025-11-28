@@ -173,8 +173,8 @@ My monitoring stack includes Prometheus for metrics collection and Grafana for v
 
 ## To Do
 
-- [ ] Migrate to Talos Linux
-- [ ] Implement Cilium as CNI
+- [x] Migrate to Talos Linux
+- [x] Implement Cilium as CNI
 - [ ] Migrate to shared storage with NAS and the iSCSI plugin
 - [ ] Implement an automated backup solution for persistent volumes
 - [ ] Set up Authentik for authentication
