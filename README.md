@@ -98,12 +98,12 @@ I use mini PCs and virtual machines for my Kubernetes cluster, offering a good b
     </tr>
     <tr>
         <td><img width="32" src=""></td>
-        <td><a href="https://github.com/RatingPosterDB/PlexAniSync">PlexAniSync</a></td>
+        <td><a href="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/plex.svg">PlexAniSync</a></td>
         <td>Sync your Plex libraries with AniList</td>
     </tr>
     <tr>
         <td><img width="32" src=""></td>
-        <td><a href="https://github.com/RemiRigal/Plex-Auto-Languages">PlexAutoLanguages</a></td>
+        <td><a href="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/plex.svg">PlexAutoLanguages</a></td>
         <td>Automatically sets audio and subtitle tracks in Plex based on user preferences</td>
     </tr>
 </table>
