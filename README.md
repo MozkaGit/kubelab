@@ -97,14 +97,14 @@ I use mini PCs and virtual machines for my Kubernetes cluster, offering a good b
         <td>Fast, easy, and free BitTorrent client</td>
     </tr>
     <tr>
-        <td><img width="32" src=""></td>
-        <td><a href="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/plex.svg">PlexAniSync</a></td>
-        <td>Sync your Plex libraries with AniList</td>
+        <td><img width="32" src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/plex.svg"></td>
+        <td><a href="https://www.plex.tv/">PlexAniSync</a></td>
+        <td>Media server for organizing and streaming movies, TV shows, music, and photos</td>
     </tr>
     <tr>
-        <td><img width="32" src=""></td>
-        <td><a href="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/plex.svg">PlexAutoLanguages</a></td>
-        <td>Automatically sets audio and subtitle tracks in Plex based on user preferences</td>
+        <td><img width="32" src="https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/svg/plex.svg"></td>
+        <td><a href="https://www.plex.tv/">PlexAutoLanguages</a></td>
+        <td>Media server for organizing and streaming movies, TV shows, music, and photos</td>
     </tr>
 </table>
 
