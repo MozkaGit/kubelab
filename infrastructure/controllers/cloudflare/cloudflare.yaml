@@ -20,7 +20,8 @@ spec:
             # Points cloudflared to the config file, which configures what
             # cloudflared will actually do. This file is created by a ConfigMap
             # below.
-            - --protocol http2
+            - --protocol
+            - http2
             - --config
             - /etc/cloudflared/config/config.yaml
             - run
